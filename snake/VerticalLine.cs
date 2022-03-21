@@ -4,8 +4,10 @@ using System.Text;
 
 namespace snake
 {
+    //Класс наследник использующий параметры из класса фигура
     class VerticalLine : Figure
     {
+        //Конструктор для создания вертикальной линии
         public VerticalLine(int yLeft, int yRight, int x, char sym)
         {
             pList = new List<Point>();

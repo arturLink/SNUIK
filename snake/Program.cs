@@ -22,7 +22,7 @@ namespace snake
             downline.Drow();
             leftline.Drow();
             rightline.Drow();
-
+            //Отрисовка змейки и ее направление
             Point p = new Point(1,3,'*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();

@@ -15,6 +15,7 @@ namespace snake
 
         //constructori
         public Point() { }
+        //Конструктор создающий точки x,y и символ
         public Point(int X, int Y, char SYM)
         {
             x = X;
@@ -29,25 +30,31 @@ namespace snake
         }
         
         //functions
+        //Функция которая направляет змейку в заданое направление
         public void Move(int offset, Direction direction)
         {
+            //Направление в право
             if (direction==Direction.RIGHT)
             {
                 x = x + offset;
             }
-            else if(direction==Direction.LEFT)
+            //Направление в лево
+            else if (direction==Direction.LEFT)
             {
                 x = x - offset;
             }
+            //Направление в верх
             else if (direction == Direction.UP)
             {
                 y = y + offset;
             }
+            //Направление в вниз
             else if (direction == Direction.DOWN)
             {
                 y = y - offset;
             }
         }
+        //Функция рисующая символ на координатах
         public void Draw()
         {
             Console.SetCursorPosition(x, y);

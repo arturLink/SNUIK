@@ -6,6 +6,7 @@ namespace snake
 {
     enum Direction
     {
+        //Список направлений
             LEFT,
             RIGHT,
             UP,
