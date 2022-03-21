@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace snake
 {
@@ -26,9 +27,18 @@ namespace snake
             Point p = new Point(1,3,'*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
-
             
-            Console.ReadLine();
+            //Бесконечный цикл отвечающий за управление
+            while(true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
         }
     }
 }

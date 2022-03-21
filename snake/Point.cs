@@ -46,12 +46,12 @@ namespace snake
             //Направление в верх
             else if (direction == Direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             //Направление в вниз
             else if (direction == Direction.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
         //Функция рисующая символ на координатах
@@ -59,6 +59,12 @@ namespace snake
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+        //Функция которая заменяет последний символ змейки(хвост) на пробел
+        public void Clear()
+        {
+            sym =' ';
+            Draw();
         }
         public override string ToString()
         {
