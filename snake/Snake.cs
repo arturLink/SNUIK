@@ -86,7 +86,7 @@ namespace snake
                 pList.Add(food);
                 return true;
             }
-            //В других случаях если не касается false
+            //В других случаях если не касается - false
             else
                 return false;
         }

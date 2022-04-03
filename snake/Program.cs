@@ -11,8 +11,9 @@ namespace snake
     {
         static void Main(string[] args)
         {
+            int Bunda = 0;
             //Создание рамки
-            Console.SetWindowSize(80, 25);//uuuu
+            Console.SetWindowSize(110, 25);//uuuu
 
             Walls walls = new Walls(80, 25);
             walls.Draw();
@@ -27,8 +28,12 @@ namespace snake
             Point food = foodCreator.CreateFood();
             food.Draw();
 
-            while(true)
+            Score score = new Score(0);
+            while (true)
             {
+
+
+                //Условие проигрыша, либо змейка убивается об себя, либо об стенку
                 if(walls.IsHit(snake) || snake.IsHitTail())
                 {
                     break;
@@ -39,6 +44,8 @@ namespace snake
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
+                    score.ScrPlus();
+                    score.ScrUpdate();
                 }
                 else
                 {
@@ -53,6 +60,9 @@ namespace snake
                     snake.HandleKey(key.Key);
                 }
             }
+            GameOver over = new GameOver(Bunda);
+            over.Ending();
+            Console.ReadLine();
         }
     }
 }
