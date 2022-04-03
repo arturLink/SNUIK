@@ -28,6 +28,7 @@ namespace snake
                 pList.Add(p);
             }
         }
+
         //Функция для движения змейки
         internal void Move()
         {
@@ -39,6 +40,7 @@ namespace snake
             tail.Clear();
             head.Draw();
         }
+
         //Функция которая двигает змейку на следующий координат по направлению
         public Point GetNextPoint()
         {
@@ -47,6 +49,7 @@ namespace snake
             nextPoint.Move(1, direction);
             return nextPoint;
         }
+
         //Функция отвечающая за управление
         public void HandleKey(ConsoleKey key)
         {
@@ -58,6 +61,23 @@ namespace snake
                 direction = Direction.DOWN;
             else if (key == ConsoleKey.UpArrow)
                 direction = Direction.UP;
+        }
+
+        //Функция отвечающая за пищеварительный тракт змейки
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            //Если голова змейки касается food возвращает true и рисует новую еду на новых координатах 
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                //Увелечение змейки
+                pList.Add(food);
+                return true;
+            }
+            //В других случаях если не касается false
+            else
+                return false;
         }
     }
 }

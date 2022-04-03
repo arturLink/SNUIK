@@ -54,18 +54,27 @@ namespace snake
                 y = y + offset;
             }
         }
+
+        //Функция которая проверяет равенство координат
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         //Функция рисующая символ на координатах
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
+
         //Функция которая заменяет последний символ змейки(хвост) на пробел
         public void Clear()
         {
             sym =' ';
             Draw();
         }
+
         public override string ToString()
         {
             return x + "," + y + "," + sym;
