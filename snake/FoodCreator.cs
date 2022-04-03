@@ -7,9 +7,9 @@ namespace snake
     class FoodCreator
     {
         //Размеры карты и используемый символ для обозначения еды
-        int mapWidth;
-        int mapHeight;
-        char sym;
+        private int mapWidth;
+        private int mapHeight;
+        private char sym;
 
         Random rnd = new Random();
 

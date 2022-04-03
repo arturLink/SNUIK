@@ -13,16 +13,9 @@ namespace snake
         {
             //Создание рамки
             Console.SetWindowSize(80, 25);//uuuu
-            //Создание линий для рамки
-            HorizontalLine upline = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine downline = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftline = new VerticalLine(0, 24, 0, '+');
-            VerticalLine rightline = new VerticalLine(0, 24, 78, '+');
-            //Отрисовка этих линий
-            upline.Drow();
-            downline.Drow();
-            leftline.Drow();
-            rightline.Drow();
+
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
             
             //Отрисовка змейки и ее направление
             Point p = new Point(1,3,'*');
@@ -36,6 +29,11 @@ namespace snake
 
             while(true)
             {
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
+
                 //Создание новой еды если съели старую
                 if(snake.Eat(food))
                 {
