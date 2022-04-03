@@ -1,27 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace snake
-{
-    class Params
-    {
-        private string resourcesFolder;
+//namespace snake
+//{
+//    class Params
+//    {
+//        private string resourcesFolder;
 
-        public Params()
-        {
-            var ind = Directory.GetCurrentDirectory().ToString().IndexOf("bin", StringComparison.Ordinal);
+//        public Params()
+//        {
+//            var ind = Directory.GetCurrentDirectory().ToString().IndexOf("bin", StringComparison.Ordinal);
 
-            string binFolder = Directory.GetCurrentDirectory().ToString().Substring(0, ind).ToString();
-            resourcesFolder = binFolder + "resources\\";
-        }
+//            string binFolder = Directory.GetCurrentDirectory().ToString().Substring(0, ind).ToString();
+//            resourcesFolder = binFolder + "resources\\";
+//        }
 
-        public string GetResourcesFolder()
-        {
-            return resourcesFolder;
+//        public string GetResourcesFolder()
+//        {
+//            return resourcesFolder;
 
-        }
-    }
-}
+//        }
+//    }
+//}
