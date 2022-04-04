@@ -8,25 +8,30 @@ namespace snake
 {
     class Score
     {
-        public int score;
+        int score;
 
-        public Score(int score)
+        public Score(int Scr)
         {
-            this.score = score;
+            score = Scr;
             Console.SetCursorPosition(90, 2);
-            Console.WriteLine("Points: {0}",score);
+            Console.WriteLine("Points: {0}",Scr);
         }
 
-        public void ScrPlus()
+        public int Scr
         {
-            score = +10;
+            set { score = value; }
+            get { return score; }
         }
 
-        public void ScrUpdate()
+        public void AddUp()
+        {
+            Scr +=10;
+        }
+
+        public void ScoreReader()
         {
             Console.SetCursorPosition(90, 2);
-            Console.WriteLine("Points: {0}", score);
+            Console.WriteLine("Points: {0}", Scr);
         }
-
     }
 }
